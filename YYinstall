@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd ./grub-core
+
+../grub-mkimage -O x86_64-efi -d . -o /tmp/AgGrub.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot
+
+# sudo mkdir -p /boot/efi/EFI/grub
+# sudo cp /tmp/AgGrub.efi *.mod *.lst /boot/efi/EFI/grub/

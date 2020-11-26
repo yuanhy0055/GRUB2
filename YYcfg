@@ -1,0 +1,3 @@
+export EFI_ARCH=x86_64
+./configure --with-platform=efi --target=${EFI_ARCH} --program-prefix=""
+make
