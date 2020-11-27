@@ -2,7 +2,10 @@
 
 cd ./grub-core
 
-../grub-mkimage -O x86_64-efi -d . -o /tmp/AgGrub.efi -p "" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot
-
+../grub-mkimage -O x86_64-efi -d . -o /tmp/AgGrub.efi -p "/EFI/AgreeOS" part_gpt part_msdos ntfs ntfscomp hfsplus fat ext2 normal chain boot configfile linux multiboot search_fs_file video_bochs video_cirrus file gfxmenu gfxterm gfxterm_background gfxterm_menu halt reboot help jpeg ls png true
+# disk exfat xfs appleldr hfs iso9660 normal linux16 loopback echo efi_gop efi_uga 
 # sudo mkdir -p /boot/efi/EFI/grub
-# sudo cp /tmp/AgGrub.efi *.mod *.lst /boot/efi/EFI/grub/
+mkdir /dev/shm/AgreeOS
+mkdir /dev/shm/AgreeOS/x86_64-efi
+cp /tmp/AgGrub.efi /dev/shm/AgreeOS/
+cp *.mod *.lst /dev/shm/AgreeOS/x86_64-efi/
